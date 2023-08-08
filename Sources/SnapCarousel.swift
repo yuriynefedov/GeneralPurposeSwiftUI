@@ -9,7 +9,7 @@ import SwiftUI
 
 
 // To for acepting List....
-struct SnapCarousel<Content: View, T: Identifiable>: View {
+public struct SnapCarousel<Content: View, T: Identifiable>: View {
     
     var content: (T) -> Content
     var list: [T]

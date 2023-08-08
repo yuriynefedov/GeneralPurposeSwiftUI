@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-protocol CarouselItem: Identifiable {
+public protocol CarouselItem: Identifiable {
     var id: String { get }
     var view: AnyView { get }
 }
 
 
 // Post Model And Sample Data...
-struct SimpleCarouselTile: CarouselItem {
+public struct SimpleCarouselTile: CarouselItem {
     var id: String = UUID().uuidString
     var color: Color
     var text: String
