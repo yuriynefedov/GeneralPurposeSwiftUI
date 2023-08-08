@@ -9,23 +9,20 @@ import SwiftUI
 
 
 // To for acepting List....
-public struct SnapCarousel<Content: View, T: Identifiable>: View {
-    
-    var content: (T) -> Content
-    var list: [T]
+public struct SnapCarousel: View {
+    var list: [any CarouselItem]
     
     // Properties....
     var spacing: CGFloat
     var trailingSpace: CGFloat
     @Binding var index: Int
     
-    public init(spacing: CGFloat = 15, trailingSpace: CGFloat = 100, index: Binding<Int>, items: [T], @ViewBuilder content: @escaping (T)->Content){
+    public init(spacing: CGFloat = 15, trailingSpace: CGFloat = 100, index: Binding<Int>, items: [any CarouselItem]) {
         
         self.list = items
         self.spacing = spacing
         self.trailingSpace = trailingSpace
         self._index = index
-        self.content = content
     }
     
     // Offset...
@@ -33,19 +30,13 @@ public struct SnapCarousel<Content: View, T: Identifiable>: View {
     @State var currentIndex: Int = 0
     
     public var body: some View {
-            
-        
-        GeometryReader{proxy in
-            
-            // Settings correct Width for snap Carousel...
-    
-            // One Sided Snap Carousel
+        GeometryReader{ proxy in
             let width = proxy.size.width - ( trailingSpace - spacing )
             let adjustMentWidth = (trailingSpace / 2) - spacing
             
             HStack (spacing: spacing) {
-                ForEach(list) { item in
-                    content(item)
+                ForEach(list, id: \.id) { item in
+                    item.view
                         .frame(width: proxy.size.width - trailingSpace)
                 }
 
