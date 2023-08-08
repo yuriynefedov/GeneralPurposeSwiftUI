@@ -15,11 +15,11 @@ public protocol CarouselItem: Identifiable {
 
 // Post Model And Sample Data...
 public struct SimpleCarouselTile: CarouselItem {
-    var id: String = UUID().uuidString
-    var color: Color
-    var text: String
+    public var id: String = UUID().uuidString
+    public var color: Color
+    public var text: String
     
-    var view: AnyView {
+    public var view: AnyView {
         AnyView(
             ZStack(alignment: .topLeading) {
                 RoundedRectangle(cornerRadius: 16)

@@ -32,7 +32,7 @@ public struct SnapCarousel<Content: View, T: Identifiable>: View {
     @GestureState var offset: CGFloat = 0
     @State var currentIndex: Int = 0
     
-    var body: some View {
+    public var body: some View {
             
         
         GeometryReader{proxy in
@@ -103,10 +103,4 @@ public struct SnapCarousel<Content: View, T: Identifiable>: View {
         
     }
 
-}
-
-struct SnapCarousel_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
 }
