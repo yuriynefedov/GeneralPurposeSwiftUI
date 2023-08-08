@@ -32,7 +32,7 @@ public struct SimpleCarouselTile: CarouselItem {
         )
     }
     
-    static let examples: [SimpleCarouselTile] = [
+    public static let examples: [SimpleCarouselTile] = [
         .init(color: .red, text: "Red"),
         .init(color: .orange, text: "Orange"),
         .init(color: .yellow, text: "Yellow"),
