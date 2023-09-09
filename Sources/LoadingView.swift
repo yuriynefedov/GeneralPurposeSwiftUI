@@ -64,7 +64,7 @@ public struct LoadingView: View {
             Circle()
                 .stroke(Self.primaryColor, lineWidth: stroke)
                 .foregroundColor(.clear)
-            Sector(percentage: Self.defaultProgress)
+            Sector(percentage: progress)
         }
         .frame(maxWidth: maxSize, maxHeight: maxSize)
         .foregroundColor(Self.primaryColor)
