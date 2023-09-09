@@ -40,6 +40,11 @@ public struct LoadingView: View {
     public var style: Style = .spinner
     public var progress: Double = Self.defaultProgress
     
+    public init(style: Style, progress: Double) {
+        self.style = style
+        self.progress = progress
+    }
+    
     public var body: some View {
         switch style {
         case .spinner:
