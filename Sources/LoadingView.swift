@@ -50,6 +50,8 @@ public struct LoadingView: View {
     ) {
         self.style = style
         self.progress = progress
+        self.primaryColor = primaryColor
+        self.secondaryColor = secondaryColor
     }
     
     public var body: some View {
@@ -122,6 +124,10 @@ extension LoadingView {
 
 struct LoadingView_Previews: PreviewProvider {
     static var previews: some View {
-        LoadingView(style: .cirular, progress: LoadingView.defaultProgress)
+        LoadingView(
+            style: .cirular,
+            progress: LoadingView.defaultProgress,
+            primaryColor: .red
+        )
     }
 }
